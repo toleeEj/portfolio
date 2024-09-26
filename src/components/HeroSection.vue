@@ -37,12 +37,12 @@ export default {
           message: "Your one-stop shop for the latest electronic gadgets.",
         },
         {
-          image: require("@/assets/hp_omen_x_laptop-678-1_678x452.jpg"),
+          image: require("@/assets/hero1.jpg"),
           title: "Discover Cutting-Edge Technology",
           message: "Explore our range of high-tech devices.",
         },
         {
-          image: require("@/assets/smartcamera.jpg"),
+          image: require("@/assets/hero5.jpg"),
           title: "Unbeatable Deals Await",
           message: "Shop now and enjoy exclusive discounts.",
         },

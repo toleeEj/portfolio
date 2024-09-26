@@ -3,10 +3,9 @@
     <section class="social-media">
       <h2>Follow Us</h2>
       <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-pinterest"></i></a>
+        <a href="https://t.me/T011i">telegram</a>
+        <a href="https://www.linkedin.com/in/tolesa-ejara-401025253/">linkdn</a>
+        <a href="tolesaejara@gmail.com">Email</a>
       </div>
     </section>
     <div class="legal-info">
@@ -15,7 +14,11 @@
     </div>
   </footer>
 </template>
-
+<script>
+export default {
+  name: "SocialIcons",
+};
+</script>
 <style scoped>
 .footer {
   background: linear-gradient(90deg, #6a11cb, #2575fc);
@@ -81,13 +84,18 @@
 
 .social-icons a {
   margin: 0 1rem;
-  font-size: 2rem;
+  text-decoration: none;
+  font-size: 1.5rem;
   color: #ffeb3b;
   transition: color 0.3s;
 }
 
 .social-icons a:hover {
   color: green;
+  text-decoration: underline;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 /* Responsive Styles */

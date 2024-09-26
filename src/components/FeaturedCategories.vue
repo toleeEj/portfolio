@@ -24,31 +24,31 @@ export default {
       categories: [
         {
           name: "Laptops",
-          image: require("@/assets/hp.jpg"),
+          image: require("@/assets/hhp.jpg"),
           description:
             "We are dedicated to providing the latest and greatest in electronic devices, ensuring our customers have access to quality products at unbeatable prices.",
         },
         {
           name: "headphones",
-          image: require("@/assets/headphones.jpg"),
+          image: require("@/assets/hero2.jpg"),
           description:
             "We are dedicated to providing the latest and greatest in electronic devices, ensuring our customers have access to quality products at unbeatable prices.",
         },
         {
           name: "Cameras",
-          image: require("@/assets/cameras.jpg"),
+          image: require("@/assets/cameras1.jpg"),
           description:
             "We are dedicated to providing the latest and greatest in electronic devices, ensuring our customers have access to quality products at unbeatable prices.",
         },
         {
           name: "Smartwatches",
-          image: require("@/assets/smartwathch.jpg"),
+          image: require("@/assets/hero5.jpg"),
           description:
             "We are dedicated to providing the latest and greatest in electronic devices, ensuring our customers have access to quality products at unbeatable prices.",
         },
         {
           name: "Tablets",
-          image: require("@/assets/Tablets1.jpg"),
+          image: require("@/assets/Tablets3.jpg"),
           description:
             "We are dedicated to providing the latest and greatest in electronic devices, ensuring our customers have access to quality products at unbeatable prices.",
         },

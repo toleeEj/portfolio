@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import "@fortawesome/fontawesome-free/css/all.css";
 import HeaderBar from "./components/HeaderBar.vue";
 import FooterBar from "./components/FooterBar.vue";
 

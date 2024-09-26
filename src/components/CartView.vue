@@ -43,16 +43,16 @@ export default {
       cartItems: [
         {
           id: 1,
-          name: "Laptop XYZ",
+          name: "PC XYZ",
           price: 999,
-          image: require("@/assets/hppx.jpg"),
+          image: require("@/assets/hero1.jpg"),
           quantity: 1,
         },
         {
           id: 2,
           name: "Smartphone ABC",
           price: 599,
-          image: require("@/assets/iphoone.jpg"),
+          image: require("@/assets/hero3.jpg"),
           quantity: 2,
         },
       ],

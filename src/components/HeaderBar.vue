@@ -66,7 +66,7 @@ export default {
 .nav-menu ul {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 2rem; /* Space between menu items */
   margin: 0;
   padding: 0;
 }
@@ -124,18 +124,23 @@ export default {
 /* Responsive Styles */
 @media (max-width: 768px) {
   .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
+    padding: 1rem; /* Adjust padding for smaller screens */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items */
   }
 
   .nav-menu ul {
-    flex-direction: column;
-    gap: 1rem;
+    display: flex; /* Maintain row layout */
+    flex-direction: row; /* Ensure items are in a row */
+    flex-wrap: wrap; /* Allow wrapping if necessary */
+    justify-content: center; /* Center the items */
+    gap: 1rem; /* Reduce gaps for smaller screens */
+    margin-top: 1rem; /* Space between the logo and menu */
   }
 
   .user-options {
-    margin-top: 1rem;
+    margin-top: 1rem; /* Add space above user options */
+    justify-content: center; /* Center user options */
   }
 }
 </style>

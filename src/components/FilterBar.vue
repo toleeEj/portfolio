@@ -31,6 +31,7 @@ export default {
 .filter-bar {
   margin-bottom: 2rem;
   text-align: center;
+  color: white;
 }
 
 select {

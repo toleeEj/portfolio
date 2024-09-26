@@ -1,11 +1,11 @@
 <template>
-  <router-link :to="`/product/${product.id}`" class="product-card">
+  <div class="product-card" @click="goToProduct">
     <img :src="product.image" :alt="product.name" class="product-image" />
     <h3>{{ product.name }}</h3>
     <p>{{ product.price }}</p>
-    <button @click="addToCart">Add to Cart</button>
-    <button @click="addToWishlist">Add to Wishlist</button>
-  </router-link>
+    <button @click.stop="addToCart">Add to Cart</button>
+    <button @click.stop="addToWishlist">Add to Wishlist</button>
+  </div>
 </template>
 
 <script>
@@ -15,6 +15,12 @@ export default {
     product: Object,
   },
   methods: {
+    goToProduct() {
+      this.$router.push({
+        name: "ProductDetail",
+        params: { id: this.product.id },
+      });
+    },
     addToCart() {
       alert(`${this.product.name} added to cart!`);
     },
@@ -32,6 +38,7 @@ export default {
   border: 1px solid #ddd;
   border-radius: 10px;
   text-align: center;
+  cursor: pointer;
 }
 
 .product-image {

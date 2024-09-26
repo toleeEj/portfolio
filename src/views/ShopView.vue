@@ -27,86 +27,65 @@ export default {
       products: [
         {
           id: 1,
-          name: "hppx",
-          price: "$599",
-          image: require("@/assets/hppx.jpg"),
-          category: "Laptops",
-        },
-        {
-          id: 2,
-          name: "del Diablo",
-          price: "$599",
-          image: require("@/assets/del Diablo-.jpg"),
-          category: "Laptops",
-        },
-        {
-          id: 5,
-          name: "labtop2",
+          name: "hp laptop",
           price: "$599",
           image: require("@/assets/hhp.jpg"),
           category: "Laptops",
         },
         {
-          id: 7,
-          name: "Samsung-Galaxy-S23",
+          id: 2,
+          name: "hp",
           price: "$599",
-          image: require("@/assets/Samsung-Galaxy-S23.jpg"),
+          image: require("@/assets/hero1.jpg"),
+          category: "Laptops",
+        },
+        {
+          id: 3,
+          name: "Samsung-Galaxy",
+          price: "$599",
+          image: require("@/assets/Samsung.jpg"),
           category: "Smartphones",
         },
         {
-          id: 10,
+          id: 4,
           name: "iphoone",
           price: "$599",
-          image: require("@/assets/iphoone.jpg"),
+          image: require("@/assets/hero3.jpg"),
           category: "Smartphones",
         },
         {
-          id: 13,
+          id: 5,
+          name: "Headphone",
+          price: "$749",
+          image: require("@/assets/hero2.jpg"),
+          category: "headphones",
+        },
+        {
+          id: 6,
           name: "Camera",
           price: "$749",
           image: require("@/assets/cameras1.jpg"),
           category: "Cameras",
         },
         {
-          id: 14,
-          name: "Camera",
-          price: "$749",
-          image: require("@/assets/cameras2.jpg"),
-          category: "Cameras",
-        },
-        {
-          id: 15,
-          name: "Camera",
-          price: "$749",
-          image: require("@/assets/cameras4.jpg"),
-          category: "Cameras",
-        },
-        {
-          id: 16,
+          id: 7,
           name: "Smartwatch X",
           price: "$299",
-          image: require("@/assets/smartwathch.jpg"),
+          image: require("@/assets/hero5.jpg"),
           category: "Smartwatches",
         },
         {
-          id: 17,
-          name: "Best-5-smart-watches",
-          price: "$299",
-          image: require("@/assets/Best-5-smart-watches-16-12-23-teaser.jpg"),
-          category: "Smartwatches",
-        },
-        {
-          id: 18,
+          id: 8,
           name: "Tablet Pro",
           price: "$449",
-          image: require("@/assets/Tablets.jpg"),
+          image: require("@/assets/Tablets3.jpg"),
           category: "Tablets",
         },
         {
-          id: 19,
+          id: 9,
           name: "Tablet",
           price: "$449",
-          image: require("@/assets/Tablets1.jpg"),
+          image: require("@/assets/hero.jpg"),
           category: "Tablets",
         },
       ],
@@ -134,21 +113,17 @@ export default {
 /* Main shop page styling */
 .shop-page {
   padding-top: 3rem;
-  background: linear-gradient(
-    -90deg,
-    #6a11cb,
-    #2575fc
-  ); /* A cool, subtle dark gradient */
+  background: linear-gradient(-90deg, #6a11cb, #2575fc);
   text-align: center;
   min-height: 100vh;
-  color: white; /* Lighter text for contrast */
+  color: white;
 }
 
 .shop-page h1 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  color: #fff; /* White title for contrast */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Slightly darker shadow */
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* Product listings grid */
@@ -158,18 +133,19 @@ export default {
   flex-wrap: wrap;
   gap: 2rem;
   padding: 1rem;
-  max-width: 1200px;
+  max-width: 100%; /* Make it flexible */
   margin: 0 auto;
 }
 
 /* Product card styling */
 .product-card {
-  background-color: white; /* Dark card background */
+  background-color: white;
   border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 280px; /* Set a max width for larger screens */
   cursor: pointer;
 }
 
@@ -178,11 +154,10 @@ export default {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-bottom: 2px solid #4f6478; /* Matches the dark gradient */
+  border-bottom: 2px solid #4f6478;
   transition: transform 0.4s ease;
 }
 
-/* Product name and price styling */
 .product-card h3 {
   font-size: 1.25rem;
   color: #fff;
@@ -195,17 +170,15 @@ export default {
   margin-bottom: 1rem;
 }
 
-/* Hover effect for the product card */
 .product-card:hover {
-  transform: translateY(-10px); /* Lifts the card slightly */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 .product-card:hover img {
-  transform: scale(1.1); /* Zoom-in effect on hover */
+  transform: scale(1.1);
 }
 
-/* Button styling for filtering */
 .filter-bar button {
   padding: 0.75rem 1.5rem;
   background-color: white;
@@ -218,12 +191,43 @@ export default {
 }
 
 .filter-bar button:hover {
-  background-color: #6c859e; /* Lightens on hover */
-  transform: translateY(-3px); /* Lift effect on hover */
+  background-color: #6c859e;
+  transform: translateY(-3px);
 }
 
 .filter-bar button:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(79, 100, 120, 0.5);
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .shop-page h1 {
+    margin-top: 140px;
+    font-size: 2rem;
+  }
+
+  .product-listings {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .product-card {
+    max-width: 70%; /* Adjust width on smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .shop-page h1 {
+    font-size: 1.5rem;
+  }
+
+  .product-card img {
+    height: 150px;
+  }
+
+  .product-card {
+    max-width: 100%; /* Full width on mobile */
+  }
 }
 </style>

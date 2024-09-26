@@ -15,7 +15,7 @@
     <div class="product-info">
       <h1>{{ product.name }}</h1>
       <p class="price">{{ product.price }}</p>
-      <p class="rating">Rating: {{ product.rating }} ⭐</p>
+      <p class="rating">Rating: {{ product.rating }} ⭐⭐⭐⭐</p>
       <div class="product-options">
         <label for="size">Size:</label>
         <select id="size" v-model="selectedSize">
@@ -35,146 +35,111 @@
       <div class="product-description">
         <h2>Description</h2>
         <p>
-          equipped with advanced computing capabilities, connectivity, and often
-          AI-powered features. designed to enhance communication, productivity,
+          Equipped with advanced computing capabilities, connectivity, and often
+          AI-powered features. Designed to enhance communication, productivity,
           and convenience in everyday life by offering a range of functions like
           internet access, multimedia processing, fitness tracking, and
           real-time data synchronization.
         </p>
         <p>{{ product.description }}</p>
       </div>
-      <div class="related-products">
-        <h2>Related Products</h2>
-        <div class="related-list">
-          <ProductCard
-            v-for="relatedProduct in relatedProducts"
-            :key="relatedProduct.id"
-            :product="relatedProduct"
-          />
-        </div>
-      </div>
+      <button @click="shopNow" class="btn-primary">
+        back to see more devices
+      </button>
     </div>
   </div>
   <p v-else>Loading product details...</p>
 </template>
 
 <script>
-import ProductCard from "../components/ProductCard.vue";
-
 export default {
   name: "ProductDetailView",
-  components: {
-    ProductCard,
-  },
   data() {
     return {
       selectedSize: "",
       selectedColor: "",
       product: null, // Set to null initially
-      relatedProducts: [
-        {
-          id: 1,
-          name: "hppx",
-          price: "$599",
-          image: require("@/assets/hppx.jpg"),
-          category: "Laptops",
-        },
-        {
-          id: 2,
-          name: "del Diablo",
-          price: "$599",
-          image: require("@/assets/del Diablo-.jpg"),
-          category: "Laptops",
-        },
-        {
-          id: 5,
-          name: "labtop2",
-          price: "$599",
-          image: require("@/assets/hhp.jpg"),
-          category: "Laptops",
-        },
-        {
-          id: 7,
-          name: "Samsung-Galaxy-S23",
-          price: "$599",
-          image: require("@/assets/Samsung-Galaxy-S23.jpg"),
-          category: "Smartphones",
-        },
-        {
-          id: 10,
-          name: "iphoone",
-          price: "$599",
-          image: require("@/assets/iphoone.jpg"),
-          category: "Smartphones",
-        },
-        {
-          id: 11,
-          name: "iphone",
-          price: "$599",
-          image: require("@/assets/iphone.jpg"),
-          category: "Smartphones",
-        },
-        {
-          id: 13,
-          name: "Camera",
-          price: "$749",
-          image: require("@/assets/cameras1.jpg"),
-          category: "Cameras",
-        },
-        {
-          id: 14,
-          name: "Camera",
-          price: "$749",
-          image: require("@/assets/cameras2.jpg"),
-          category: "Cameras",
-        },
-        {
-          id: 15,
-          name: "Camera",
-          price: "$749",
-          image: require("@/assets/cameras4.jpg"),
-          category: "Cameras",
-        },
-        {
-          id: 16,
-          name: "Smartwatch X",
-          price: "$299",
-          image: require("@/assets/smartwathch.jpg"),
-          category: "Smartwatches",
-        },
-        {
-          id: 17,
-          name: "Best-5-smart-watches",
-          price: "$299",
-          image: require("@/assets/Best-5-smart-watches-16-12-23-teaser.jpg"),
-          category: "Smartwatches",
-        },
-        {
-          id: 18,
-          name: "Tablet Pro",
-          price: "$449",
-          image: require("@/assets/Tablets.jpg"),
-          category: "Tablets",
-        },
-        {
-          id: 19,
-          name: "Tablet",
-          price: "$449",
-          image: require("@/assets/Tablets1.jpg"),
-          category: "Tablets",
-        },
-      ],
     };
   },
 
   created() {
     const productId = this.$route.params.id;
+    // Mock related products for demonstration
+    const relatedProducts = [
+      {
+        id: 1,
+        name: "hp laptop",
+        price: "$599",
+        image: require("@/assets/hhp.jpg"),
+        category: "Laptops",
+      },
+      {
+        id: 2,
+        name: "hp",
+        price: "$599",
+        image: require("@/assets/hero1.jpg"),
+        category: "Laptops",
+      },
+      {
+        id: 3,
+        name: "Samsung-Galaxy",
+        price: "$599",
+        image: require("@/assets/Samsung.jpg"),
+        category: "Smartphones",
+      },
+      {
+        id: 4,
+        name: "iPhone",
+        price: "$599",
+        image: require("@/assets/hero3.jpg"),
+        category: "Smartphones",
+      },
+      {
+        id: 5,
+        name: "Headphone",
+        price: "$749",
+        image: require("@/assets/hero2.jpg"),
+        category: "Cameras",
+      },
+      {
+        id: 6,
+        name: "Camera",
+        price: "$749",
+        image: require("@/assets/cameras1.jpg"),
+        category: "Cameras",
+      },
+      {
+        id: 7,
+        name: "Smartwatch X",
+        price: "$299",
+        image: require("@/assets/hero5.jpg"),
+        category: "Smartwatches",
+      },
+      {
+        id: 8,
+        name: "Tablet Pro",
+        price: "$449",
+        image: require("@/assets/Tablets3.jpg"),
+        category: "Tablets",
+      },
+      {
+        id: 9,
+        name: "Tablet",
+        price: "$449",
+        image: require("@/assets/hero.jpg"),
+        category: "Tablets",
+      },
+    ];
+
     // Fetch the correct product based on productId
-    this.product = this.relatedProducts.find(
-      (product) => product.id == productId
-    );
+    this.product = relatedProducts.find((product) => product.id == productId);
+
     if (!this.product) {
       console.error("Product not found");
+    } else {
+      // Add colors and sizes to the product dynamically
+      this.product.colors = ["Red", "Blue", "Black", "White"];
+      this.product.sizes = ["Small", "Medium", "Large"];
     }
   },
 
@@ -186,6 +151,9 @@ export default {
     },
     addToWishlist() {
       alert(`${this.product.name} added to wishlist!`);
+    },
+    shopNow() {
+      this.$router.push("/shop");
     },
   },
 };
@@ -320,41 +288,60 @@ button:hover {
   color: #fff;
 }
 
-/* Related products section styling */
-.related-products {
-  margin-top: 3rem;
-}
-
-.related-products h2 {
-  font-size: 1.75rem;
-  color: #fff;
-}
-
-.related-list {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-/* Product cards in related products section */
-.related-list .product-card {
-  background-color: #394a59;
-  border-radius: 15px;
-  padding: 1rem;
-  width: 250px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.related-list .product-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Hover lift effect with shadow */
-}
-
 /* Loader message for loading product details */
 p {
   color: #eee;
   font-size: 1.25rem;
   text-align: center;
   margin-top: 2rem;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .product-detail-page {
+    margin-top: 140px;
+    flex-direction: column; /* Stack elements vertically */
+    padding: 1rem; /* Reduce padding */
+  }
+
+  .product-gallery,
+  .product-info {
+    width: 100%; /* Full width for both sections */
+    margin-bottom: 2rem; /* Space between sections */
+  }
+
+  .product-info h1 {
+    font-size: 2rem; /* Reduce font size */
+  }
+
+  .price {
+    font-size: 1.5rem; /* Reduce font size */
+  }
+
+  .rating {
+    font-size: 1rem; /* Reduce font size */
+  }
+
+  button {
+    width: 100%; /* Full width buttons */
+  }
+}
+
+@media (max-width: 480px) {
+  .thumbnail {
+    width: 40px; /* Smaller thumbnails */
+  }
+
+  .product-info h1 {
+    font-size: 1.5rem; /* Further reduce font size */
+  }
+
+  .price {
+    font-size: 1.25rem; /* Further reduce font size */
+  }
+
+  .rating {
+    font-size: 0.9rem; /* Further reduce font size */
+  }
 }
 </style>
