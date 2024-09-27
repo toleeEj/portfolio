@@ -166,7 +166,7 @@ export default {
 
 .product-card p {
   font-size: 1rem;
-  color: white;
+  color: green;
   margin-bottom: 1rem;
 }
 
