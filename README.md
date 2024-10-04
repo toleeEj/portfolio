@@ -15,4 +15,4 @@ The primary goal of this **portfolio** is to present my work and professional jo
 - **Vue.js 3**: For building the interactive user interface.
 - **CSS**: To style the components and layout of the site.
 - **JavaScript**: To handle dynamic behaviors and logic within the website.
-- **CSS**:
+- **and HTML**
